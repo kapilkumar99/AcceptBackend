@@ -1,0 +1,18 @@
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\bin\Release\netcoreapp1.1\AuthorizeNET.deps.json
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\bin\Release\netcoreapp1.1\AuthorizeNET.dll
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\bin\Release\netcoreapp1.1\AuthorizeNET.pdb
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\obj\Release\netcoreapp1.1\AuthorizeNET.csprojAssemblyReference.cache
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\obj\Release\netcoreapp1.1\AuthorizeNET.csproj.CoreCompileInputs.cache
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\obj\Release\netcoreapp1.1\AuthorizeNET.AssemblyInfoInputs.cache
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\obj\Release\netcoreapp1.1\AuthorizeNET.AssemblyInfo.cs
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\obj\Release\netcoreapp1.1\AuthorizeNET.dll
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\obj\Release\netcoreapp1.1\AuthorizeNET.pdb
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\bin\Release\netcoreapp1.1\AuthorizeNET.deps.json
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\bin\Release\netcoreapp1.1\AuthorizeNET.dll
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\bin\Release\netcoreapp1.1\AuthorizeNET.pdb
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Release\netcoreapp1.1\AuthorizeNET.csprojAssemblyReference.cache
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Release\netcoreapp1.1\AuthorizeNET.csproj.CoreCompileInputs.cache
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Release\netcoreapp1.1\AuthorizeNET.AssemblyInfoInputs.cache
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Release\netcoreapp1.1\AuthorizeNET.AssemblyInfo.cs
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Release\netcoreapp1.1\AuthorizeNET.dll
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Release\netcoreapp1.1\AuthorizeNET.pdb
