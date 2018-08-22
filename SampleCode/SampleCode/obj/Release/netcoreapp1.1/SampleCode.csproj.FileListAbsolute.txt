@@ -1,0 +1,26 @@
+C:\TrialCore\Trial\SampleCode\SampleCode\bin\Release\netcoreapp1.1\SampleCode.dll.config
+C:\TrialCore\Trial\SampleCode\SampleCode\bin\Release\netcoreapp1.1\SampleCode.deps.json
+C:\TrialCore\Trial\SampleCode\SampleCode\bin\Release\netcoreapp1.1\SampleCode.dll
+C:\TrialCore\Trial\SampleCode\SampleCode\bin\Release\netcoreapp1.1\SampleCode.pdb
+C:\TrialCore\Trial\SampleCode\SampleCode\bin\Release\netcoreapp1.1\AuthorizeNET.dll
+C:\TrialCore\Trial\SampleCode\SampleCode\bin\Release\netcoreapp1.1\AuthorizeNET.pdb
+C:\TrialCore\Trial\SampleCode\SampleCode\obj\Release\netcoreapp1.1\SampleCode.csprojAssemblyReference.cache
+C:\TrialCore\Trial\SampleCode\SampleCode\obj\Release\netcoreapp1.1\SampleCode.csproj.CoreCompileInputs.cache
+C:\TrialCore\Trial\SampleCode\SampleCode\obj\Release\netcoreapp1.1\SampleCode.AssemblyInfoInputs.cache
+C:\TrialCore\Trial\SampleCode\SampleCode\obj\Release\netcoreapp1.1\SampleCode.AssemblyInfo.cs
+C:\TrialCore\Trial\SampleCode\SampleCode\obj\Release\netcoreapp1.1\SampleCode.csproj.CopyComplete
+C:\TrialCore\Trial\SampleCode\SampleCode\obj\Release\netcoreapp1.1\SampleCode.dll
+C:\TrialCore\Trial\SampleCode\SampleCode\obj\Release\netcoreapp1.1\SampleCode.pdb
+C:\Accept Suite\Code\AcceptSuiteService\SampleCode\SampleCode\bin\Release\netcoreapp1.1\SampleCode.dll.config
+C:\Accept Suite\Code\AcceptSuiteService\SampleCode\SampleCode\bin\Release\netcoreapp1.1\SampleCode.deps.json
+C:\Accept Suite\Code\AcceptSuiteService\SampleCode\SampleCode\bin\Release\netcoreapp1.1\SampleCode.dll
+C:\Accept Suite\Code\AcceptSuiteService\SampleCode\SampleCode\bin\Release\netcoreapp1.1\SampleCode.pdb
+C:\Accept Suite\Code\AcceptSuiteService\SampleCode\SampleCode\bin\Release\netcoreapp1.1\AuthorizeNET.dll
+C:\Accept Suite\Code\AcceptSuiteService\SampleCode\SampleCode\bin\Release\netcoreapp1.1\AuthorizeNET.pdb
+C:\Accept Suite\Code\AcceptSuiteService\SampleCode\SampleCode\obj\Release\netcoreapp1.1\SampleCode.csprojAssemblyReference.cache
+C:\Accept Suite\Code\AcceptSuiteService\SampleCode\SampleCode\obj\Release\netcoreapp1.1\SampleCode.csproj.CoreCompileInputs.cache
+C:\Accept Suite\Code\AcceptSuiteService\SampleCode\SampleCode\obj\Release\netcoreapp1.1\SampleCode.AssemblyInfoInputs.cache
+C:\Accept Suite\Code\AcceptSuiteService\SampleCode\SampleCode\obj\Release\netcoreapp1.1\SampleCode.AssemblyInfo.cs
+C:\Accept Suite\Code\AcceptSuiteService\SampleCode\SampleCode\obj\Release\netcoreapp1.1\SampleCode.csproj.CopyComplete
+C:\Accept Suite\Code\AcceptSuiteService\SampleCode\SampleCode\obj\Release\netcoreapp1.1\SampleCode.dll
+C:\Accept Suite\Code\AcceptSuiteService\SampleCode\SampleCode\obj\Release\netcoreapp1.1\SampleCode.pdb

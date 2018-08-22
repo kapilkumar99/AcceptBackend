@@ -1,0 +1,62 @@
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCodeTest.deps.json
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCodeTest.runtimeconfig.json
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCodeTest.runtimeconfig.dev.json
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCodeTest.dll
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCodeTest.pdb
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\AuthorizeNET.dll
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCode.dll
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\AuthorizeNET.pdb
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCode.pdb
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.csprojAssemblyReference.cache
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.csproj.CoreCompileInputs.cache
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.AssemblyInfoInputs.cache
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.AssemblyInfo.cs
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.csproj.CopyComplete
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.dll
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.pdb
+C:\.Net core SDK\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\.Net core SDK\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\.Net core SDK\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\.Net core SDK\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCodeTest.deps.json
+C:\.Net core SDK\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCodeTest.runtimeconfig.json
+C:\.Net core SDK\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCodeTest.runtimeconfig.dev.json
+C:\.Net core SDK\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCodeTest.dll
+C:\.Net core SDK\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCodeTest.pdb
+C:\.Net core SDK\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\AuthorizeNET.dll
+C:\.Net core SDK\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCode.dll
+C:\.Net core SDK\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\AuthorizeNET.pdb
+C:\.Net core SDK\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCode.pdb
+C:\.Net core SDK\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCode.dll.config
+C:\.Net core SDK\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.csprojAssemblyReference.cache
+C:\.Net core SDK\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.csproj.CoreCompileInputs.cache
+C:\.Net core SDK\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.AssemblyInfoInputs.cache
+C:\.Net core SDK\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.AssemblyInfo.cs
+C:\.Net core SDK\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.csproj.CopyComplete
+C:\.Net core SDK\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.dll
+C:\.Net core SDK\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.pdb
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\NUnit3.TestAdapter.dll
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\nunit.engine.netstandard.dll
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\Mono.Cecil.dll
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCodeTest.deps.json
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCodeTest.runtimeconfig.json
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCodeTest.runtimeconfig.dev.json
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCodeTest.dll
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCodeTest.pdb
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\AuthorizeNET.dll
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCode.dll
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\AuthorizeNET.pdb
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCode.pdb
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\bin\Debug\netcoreapp1.1\SampleCode.dll.config
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.csprojAssemblyReference.cache
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.csproj.CoreCompileInputs.cache
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.AssemblyInfoInputs.cache
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.AssemblyInfo.cs
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.csproj.CopyComplete
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.dll
+C:\TrialCore\Trial\SampleCode\SampleCodeTest\obj\Debug\netcoreapp1.1\SampleCodeTest.pdb

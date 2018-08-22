@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <ApplicationIcon />
+    <OutputTypeEx>exe</OutputTypeEx>
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="FraudManagement\**" />
+    <Compile Remove="MobileInappTransactions\**" />
+    <Compile Remove="PaypalExpressCheckout\**" />
+    <Compile Remove="RecurringBilling\**" />
+    <Compile Remove="TransactionReporting\**" />
+    <Compile Remove="VisaCheckout\**" />
+    <EmbeddedResource Remove="FraudManagement\**" />
+    <EmbeddedResource Remove="MobileInappTransactions\**" />
+    <EmbeddedResource Remove="PaypalExpressCheckout\**" />
+    <EmbeddedResource Remove="RecurringBilling\**" />
+    <EmbeddedResource Remove="TransactionReporting\**" />
+    <EmbeddedResource Remove="VisaCheckout\**" />
+    <None Remove="FraudManagement\**" />
+    <None Remove="MobileInappTransactions\**" />
+    <None Remove="PaypalExpressCheckout\**" />
+    <None Remove="RecurringBilling\**" />
+    <None Remove="TransactionReporting\**" />
+    <None Remove="VisaCheckout\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="CustomerProfiles\CreateCustomerPaymentProfile.cs" />
+    <Compile Remove="CustomerProfiles\CreateCustomerProfile.cs" />
+    <Compile Remove="CustomerProfiles\CreateCustomerProfileFromTransaction.cs" />
+    <Compile Remove="CustomerProfiles\CreateCustomerShippingAddress.cs" />
+    <Compile Remove="CustomerProfiles\DeleteCustomerPaymentProfile.cs" />
+    <Compile Remove="CustomerProfiles\DeleteCustomerProfile.cs" />
+    <Compile Remove="CustomerProfiles\DeleteCustomerShippingAddress.cs" />
+    <Compile Remove="CustomerProfiles\GetCustomerPaymentProfile.cs" />
+    <Compile Remove="CustomerProfiles\GetCustomerPaymentProfileList.cs" />
+    <Compile Remove="CustomerProfiles\GetCustomerProfileIds.cs" />
+    <Compile Remove="CustomerProfiles\GetCustomerShippingAddress.cs" />
+    <Compile Remove="CustomerProfiles\UpdateCustomerPaymentProfile.cs" />
+    <Compile Remove="CustomerProfiles\UpdateCustomerProfile.cs" />
+    <Compile Remove="CustomerProfiles\UpdateCustomerShippingAddress.cs" />
+    <Compile Remove="CustomerProfiles\ValidateCustomerPaymentProfile.cs" />
+    <Compile Remove="PaymentTransactions\AuthorizeCreditCard.cs" />
+    <Compile Remove="PaymentTransactions\CaptureFundsAuthorizedThroughAnotherChannel.cs" />
+    <Compile Remove="PaymentTransactions\CapturePreviouslyAuthorizedAmount.cs" />
+    <Compile Remove="PaymentTransactions\ChargeCreditCard.cs" />
+    <Compile Remove="PaymentTransactions\ChargeCustomerProfile.cs" />
+    <Compile Remove="PaymentTransactions\ChargeEncryptedTrackData.cs" />
+    <Compile Remove="PaymentTransactions\ChargeTokenizedCreditCard.cs" />
+    <Compile Remove="PaymentTransactions\ChargeTrackData.cs" />
+    <Compile Remove="PaymentTransactions\CreditBankAccount.cs" />
+    <Compile Remove="PaymentTransactions\DebitBankAccount.cs" />
+    <Compile Remove="PaymentTransactions\RefundTransaction.cs" />
+    <Compile Remove="PaymentTransactions\UpdateSplitTenderGroup.cs" />
+    <Compile Remove="PaymentTransactions\VoidTransaction.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\AuthorizeNET\AuthorizeNET\AuthorizeNET.csproj" />
+  </ItemGroup>
+
+</Project>
