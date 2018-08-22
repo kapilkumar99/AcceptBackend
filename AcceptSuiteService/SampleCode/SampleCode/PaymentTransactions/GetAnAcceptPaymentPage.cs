@@ -6,7 +6,7 @@ using AuthorizeNET.Api.Contracts.V1;
 using AuthorizeNET.Api.Controllers;
 using AuthorizeNET.Api.Controllers.Bases;
 
-namespace net.authorize.sample.CustomerProfiles
+namespace net.authorize.sample
 {
     public class GetAnAcceptPaymentPage
     {

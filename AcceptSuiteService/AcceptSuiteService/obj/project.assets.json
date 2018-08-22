@@ -4362,11 +4362,10 @@
       },
       "AuthorizeNET/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v1.1",
+        "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "Microsoft.Extensions.Logging": "1.1.1",
           "Microsoft.Extensions.Logging.Debug": "1.1.1",
-          "Microsoft.NETCore.App": "1.1.2",
           "System.ComponentModel.Primitives": "4.3.0",
           "System.Xml.XmlSerializer": "4.3.0"
         },
@@ -4379,10 +4378,10 @@
       },
       "SampleCode/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v1.1",
+        "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "AuthorizeNET": "1.0.0",
-          "Microsoft.NETCore.App": "1.1.2"
+          "Microsoft.NETCore.App": "2.1.0"
         },
         "compile": {
           "bin/placeholder/SampleCode.dll": {}

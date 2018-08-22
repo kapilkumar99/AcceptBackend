@@ -11,7 +11,7 @@ namespace net.authorize.sample
 {
     public class CreateAnAcceptPaymentTransaction
     {
-        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, decimal amount)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string token)
         {
             Console.WriteLine("Create an Accept Payment Transaction Sample");
 
@@ -53,7 +53,7 @@ namespace net.authorize.sample
             {
                 transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // charge the card
 
-                amount = amount,
+                amount = 22,
                 payment = paymentType,
                 billTo = billingAddress,
                 lineItems = lineItems
