@@ -6,9 +6,9 @@
     using Api.Controllers.Bases;
     using Microsoft.Extensions.Logging;
     using System.Net.Http;
-    using System.Threading;
+	using System.Net;
 
-    public static class HttpUtility
+	public static class HttpUtility
     {
 
         //Max response size allowed: 64 MB
@@ -40,25 +40,31 @@
             Logger.LogDebug("MerchantInfo->LoginId/TransactionKey: '{0}':'{1}'->{2}", request.merchantAuthentication.name, request.merchantAuthentication.ItemElementName, request.merchantAuthentication.Item);
 
             var postUrl = GetPostUrl(env);
+
             var requestType = typeof(TQ);
             string responseAsString = null;
             using (var clientHandler = new HttpClientHandler())
             {
-                //TODO: clientHandler.Proxy = SetProxyIfRequested(clientHandler.Proxy);
+                clientHandler.Proxy = SetProxyIfRequested(clientHandler.Proxy);
                 using (var client = new HttpClient(clientHandler))
                 {
                     //set the http connection timeout 
                     var httpConnectionTimeout = AuthorizeNET.Environment.getIntProperty(Constants.HttpConnectionTimeout);
                     client.Timeout = TimeSpan.FromMilliseconds(httpConnectionTimeout != 0 ? httpConnectionTimeout : Constants.HttpConnectionDefaultTimeout);
+	                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+					//set the time out to read/write from stream
+					//var httpReadWriteTimeout = AuthorizeNET.Environment.getIntProperty(Constants.HttpReadWriteTimeout);
+					//client.ReadWriteTimeout = (httpReadWriteTimeout != 0 ? httpReadWriteTimeout : Constants.HttpReadWriteDefaultTimeout);
+					var content = new StringContent(XmlUtility.Serialize(request));//, Encoding.UTF8, "text/xml"
+	                //ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+	                //ServicePointManager
+			              //  .ServerCertificateValidationCallback +=
+		               // (sender, cert, chain, sslPolicyErrors) => true;
 
-                    //set the time out to read/write from stream
-                    //var httpReadWriteTimeout = AuthorizeNET.Environment.getIntProperty(Constants.HttpReadWriteTimeout);
-                    //client.ReadWriteTimeout = (httpReadWriteTimeout != 0 ? httpReadWriteTimeout : Constants.HttpReadWriteDefaultTimeout);
 
-                    
-                    var content = new StringContent(XmlUtility.Serialize(request));//, Encoding.UTF8, "text/xml"
-                    Thread.Sleep(5000);
-                    var webResponse =client.PostAsync(postUrl, content).Result;
+					var webResponse =client.PostAsync(postUrl, content).Result;
+
+
                     Logger.LogDebug("Retrieving Response from Url: '{0}'", postUrl);
                     // Get the response
                     Logger.LogDebug("Received Response: '{0}'", webResponse);
@@ -89,28 +95,28 @@
 
             return response;
         }
-                
-        //public static IWebProxy SetProxyIfRequested(IWebProxy proxy)
-        //{
-        //    var newProxy = proxy as WebProxy;
 
-        //    if (UseProxy)
-        //    {
-        //        var proxyUri = new Uri(string.Format("{0}://{1}:{2}", Constants.ProxyProtocol, ProxyHost, ProxyPort));
-        //        if (!_proxySet)
-        //        {
-        //            Logger.info(string.Format("Setting up proxy to URL: '{0}'", proxyUri));
-        //            _proxySet = true;
-        //        }
-        //        if (null == proxy || null == newProxy)
-        //        {
-        //            newProxy = new WebProxy(proxyUri);
-        //        }
+		public static IWebProxy SetProxyIfRequested(IWebProxy proxy)
+		{
+			var newProxy = proxy as WebProxy;
 
-        //        newProxy.UseDefaultCredentials = true;
-        //        newProxy.BypassProxyOnLocal = true;
-        //    }
-        //    return (newProxy ?? proxy);
-        //}
-    }
+			//if (UseProxy)
+			//{
+				var proxyUri = new Uri(string.Format("{0}://{1}:{2}", Constants.ProxyProtocol, "userproxy.visa.com", 443));
+				if (!_proxySet)
+				{
+					//Logger.info(string.Format("Setting up proxy to URL: '{0}'", proxyUri));
+					_proxySet = true;
+				}
+				if (null == proxy || null == newProxy)
+				{
+					newProxy = new WebProxy(proxyUri);
+				}
+
+				newProxy.UseDefaultCredentials = true;
+				newProxy.BypassProxyOnLocal = true;
+			//}
+			return (newProxy ?? proxy);
+		}
+	}
 }
