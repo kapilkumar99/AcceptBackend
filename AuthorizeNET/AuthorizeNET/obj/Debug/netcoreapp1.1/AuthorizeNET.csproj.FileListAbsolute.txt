@@ -1,0 +1,34 @@
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\AuthorizeNET\AuthorizeNET\bin\Debug\netcoreapp1.1\AuthorizeNET.deps.json
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\AuthorizeNET\AuthorizeNET\bin\Debug\netcoreapp1.1\AuthorizeNET.dll
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\AuthorizeNET\AuthorizeNET\bin\Debug\netcoreapp1.1\AuthorizeNET.pdb
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.csproj.CoreCompileInputs.cache
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.AssemblyInfoInputs.cache
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.AssemblyInfo.cs
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.dll
+C:\Github Code for SDkDotnet\dotnet-core-sdk-beta-master\dotnet-core-sdk-beta-master\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.pdb
+C:\.Net core SDK\AuthorizeNET\AuthorizeNET\bin\Debug\netcoreapp1.1\AuthorizeNET.deps.json
+C:\.Net core SDK\AuthorizeNET\AuthorizeNET\bin\Debug\netcoreapp1.1\AuthorizeNET.dll
+C:\.Net core SDK\AuthorizeNET\AuthorizeNET\bin\Debug\netcoreapp1.1\AuthorizeNET.pdb
+C:\.Net core SDK\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.csproj.CoreCompileInputs.cache
+C:\.Net core SDK\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.AssemblyInfoInputs.cache
+C:\.Net core SDK\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.AssemblyInfo.cs
+C:\.Net core SDK\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.dll
+C:\.Net core SDK\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.pdb
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\bin\Debug\netcoreapp1.1\AuthorizeNET.deps.json
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\bin\Debug\netcoreapp1.1\AuthorizeNET.dll
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\bin\Debug\netcoreapp1.1\AuthorizeNET.pdb
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.csprojAssemblyReference.cache
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.csproj.CoreCompileInputs.cache
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.AssemblyInfoInputs.cache
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.AssemblyInfo.cs
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.dll
+C:\TrialCore\Trial\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.pdb
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\bin\Debug\netcoreapp1.1\AuthorizeNET.deps.json
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\bin\Debug\netcoreapp1.1\AuthorizeNET.dll
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\bin\Debug\netcoreapp1.1\AuthorizeNET.pdb
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.csproj.CoreCompileInputs.cache
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.AssemblyInfoInputs.cache
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.AssemblyInfo.cs
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.dll
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.pdb
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp1.1\AuthorizeNET.csprojAssemblyReference.cache

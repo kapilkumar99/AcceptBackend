@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Api\Controllers\ARBCancelSubscriptionController.cs" />
+    <Compile Remove="Api\Controllers\ARBCreateSubscriptionController.cs" />
+    <Compile Remove="Api\Controllers\ARBGetSubscriptionController.cs" />
+    <Compile Remove="Api\Controllers\ARBGetSubscriptionListController.cs" />
+    <Compile Remove="Api\Controllers\ARBGetSubscriptionStatusController.cs" />
+    <Compile Remove="Api\Controllers\ARBUpdateSubscriptionController.cs" />
+    <Compile Remove="Api\Controllers\authenticateTestController.cs" />
+    <Compile Remove="Api\Controllers\createCustomerPaymentProfileController.cs" />
+    <Compile Remove="Api\Controllers\createCustomerProfileController.cs" />
+    <Compile Remove="Api\Controllers\createCustomerProfileFromTransactionController.cs" />
+    <Compile Remove="Api\Controllers\createCustomerProfileTransactionController.cs" />
+    <Compile Remove="Api\Controllers\createCustomerShippingAddressController.cs" />
+    <Compile Remove="Api\Controllers\createProfileController.cs" />
+    <Compile Remove="Api\Controllers\decryptPaymentDataController.cs" />
+    <Compile Remove="Api\Controllers\deleteCustomerPaymentProfileController.cs" />
+    <Compile Remove="Api\Controllers\deleteCustomerProfileController.cs" />
+    <Compile Remove="Api\Controllers\deleteCustomerShippingAddressController.cs" />
+    <Compile Remove="Api\Controllers\getAUJobDetailsController.cs" />
+    <Compile Remove="Api\Controllers\getAUJobSummaryController.cs" />
+    <Compile Remove="Api\Controllers\getBatchStatisticsController.cs" />
+    <Compile Remove="Api\Controllers\getCustomerPaymentProfileController.cs" />
+    <Compile Remove="Api\Controllers\getCustomerPaymentProfileListController.cs" />
+    <Compile Remove="Api\Controllers\getCustomerProfileIdsController.cs" />
+    <Compile Remove="Api\Controllers\getCustomerShippingAddressController.cs" />
+    <Compile Remove="Api\Controllers\getMerchantDetailsController.cs" />
+    <Compile Remove="Api\Controllers\getSettledBatchListController.cs" />
+    <Compile Remove="Api\Controllers\getTransactionDetailsController.cs" />
+    <Compile Remove="Api\Controllers\getTransactionListController.cs" />
+    <Compile Remove="Api\Controllers\getUnsettledTransactionListController.cs" />
+    <Compile Remove="Api\Controllers\isAliveController.cs" />
+    <Compile Remove="Api\Controllers\logoutController.cs" />
+    <Compile Remove="Api\Controllers\mobileDeviceLoginController.cs" />
+    <Compile Remove="Api\Controllers\mobileDeviceRegistrationController.cs" />
+    <Compile Remove="Api\Controllers\sendCustomerTransactionReceiptController.cs" />
+    <Compile Remove="Api\Controllers\transactionController.cs" />
+    <Compile Remove="Api\Controllers\updateCustomerPaymentProfileController.cs" />
+    <Compile Remove="Api\Controllers\updateCustomerProfileController.cs" />
+    <Compile Remove="Api\Controllers\updateCustomerShippingAddressController.cs" />
+    <Compile Remove="Api\Controllers\updateHeldTransactionController.cs" />
+    <Compile Remove="Api\Controllers\updateSplitTenderGroupController.cs" />
+    <Compile Remove="Api\Controllers\validateCustomerPaymentProfileController.cs" />
+    <Compile Remove="Utilities\Crypto.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
+    <PackageReference Include="System.ComponentModel.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>

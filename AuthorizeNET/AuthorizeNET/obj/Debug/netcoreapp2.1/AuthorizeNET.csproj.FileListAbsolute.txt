@@ -1,0 +1,9 @@
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\bin\Debug\netcoreapp2.1\AuthorizeNET.deps.json
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\bin\Debug\netcoreapp2.1\AuthorizeNET.dll
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\bin\Debug\netcoreapp2.1\AuthorizeNET.pdb
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp2.1\AuthorizeNET.csproj.CoreCompileInputs.cache
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp2.1\AuthorizeNET.AssemblyInfoInputs.cache
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp2.1\AuthorizeNET.AssemblyInfo.cs
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp2.1\AuthorizeNET.dll
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp2.1\AuthorizeNET.pdb
+C:\Accept Suite\Code\AcceptSuiteService\AuthorizeNET\AuthorizeNET\obj\Debug\netcoreapp2.1\AuthorizeNET.csprojAssemblyReference.cache
