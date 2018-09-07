@@ -20,10 +20,32 @@ namespace AcceptSuiteService.Controllers
 		[HttpGet("AcceptJS")]
 		public ActionResult<string> AcceptJs(string token)
 		{
+
+			ProxyMethod();
+
 			ANetApiResponse profileResponse = CreateAnAcceptPaymentTransaction.Run("42a6v35CanG9", "43xmRuVC68tD8879", token);
 			//return profileResponse.messages.message[0].code + " " + profileResponse.messages.message[0].text;
 
-			string message = profileResponse.messages.message[0].code + " " + profileResponse.messages.message[0].text;
+			//string message = profileResponse.messages.message[0].code + " " + profileResponse.messages.message[0].text;
+
+			string message = string.Empty;
+
+			if (profileResponse != null)
+			{
+				if (profileResponse.messages.resultCode.ToString() == "Ok")
+					message = "Successfully created transaction with Transaction ID: " +
+					          ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse) profileResponse)
+					          .transactionResponse.transId;
+				else
+				{
+					message = ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse) profileResponse)
+					          .transactionResponse
+					          .errors[0].errorCode +
+					          ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse) profileResponse)
+					          .transactionResponse.errors[0].errorText;
+
+				}
+			}			
 
 			Response.StatusCode = (int)HttpStatusCode.OK;
 			return Content(message, MediaTypeNames.Text.Plain);
