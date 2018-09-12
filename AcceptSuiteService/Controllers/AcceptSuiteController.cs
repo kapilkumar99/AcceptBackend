@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Net.Mime;
+using System.Text;
 using System.Threading.Tasks;
 using AuthorizeNet.Api.Contracts.V1;
 using AuthorizeNet.Api.Controllers.Bases;
 using AuthorizeNet.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using net.authorize.sample;
+using Newtonsoft.Json.Linq;
 
 namespace AcceptSuiteService.Controllers
 {
@@ -18,101 +21,220 @@ namespace AcceptSuiteService.Controllers
 	{
 
 		[HttpGet("AcceptJS")]
-		public ActionResult<string> AcceptJs(string token)
+		[ProducesResponseType(200)]
+		[ProducesResponseType(404)]
+		public ActionResult<AcceptResponse> AcceptJs(string apiLoginId, string apiTransactionKey, string token)
 		{
 
-			ProxyMethod();
+			AcceptResponse objAcceptResponse = new AcceptResponse();
 
-			ANetApiResponse profileResponse = CreateAnAcceptPaymentTransaction.Run("42a6v35CanG9", "43xmRuVC68tD8879", token);
-			//return profileResponse.messages.message[0].code + " " + profileResponse.messages.message[0].text;
-
-			//string message = profileResponse.messages.message[0].code + " " + profileResponse.messages.message[0].text;
-
-			string message = string.Empty;
-
-			if (profileResponse != null)
-			{
-				if (profileResponse.messages.resultCode.ToString() == "Ok")
-					message = "Successfully created transaction with Transaction ID: " +
-					          ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse) profileResponse)
-					          .transactionResponse.transId;
-				else
-				{
-					message = ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse) profileResponse)
-					          .transactionResponse
-					          .errors[0].errorCode +
-					          ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse) profileResponse)
-					          .transactionResponse.errors[0].errorText;
-
-				}
-			}			
-
-			Response.StatusCode = (int)HttpStatusCode.OK;
-			return Content(message, MediaTypeNames.Text.Plain);
-		}
-
-		[HttpGet("AcceptHosted")]
-		public ActionResult<string> AcceptHosted()
-		{
-			ProxyMethod();
-
-			//var response = GetAnAcceptPaymentPage.Run("42a6v35CanG9", "43xmRuVC68tD8879");
-
-			ANetApiResponse response = GetAnAcceptPaymentPage.Run("42a6v35CanG9", "43xmRuVC68tD8879");
-
-			string message = string.Empty;
-
-
-			//validate
-			if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
-			{
-				 message = ((AuthorizeNet.Api.Contracts.V1.getHostedPaymentPageResponse)response).token;
-			}
-			else if (response != null)
-			{
-				 message = "Failed to get hosted payment page Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text;
-				
-			}
-
-			Response.StatusCode = (int)HttpStatusCode.OK;
-			return Content(message, MediaTypeNames.Text.Plain);
-
-		}
-
-		[HttpGet("AcceptCustomer")]
-		public ActionResult<string> AcceptCustomer()
-		{
-			ANetApiResponse profileResponse = GetAcceptCustomerProfilePage.Run("78BZ5Xprry", "8s2F95Q7brhHd7Tn", "1813212446");
-			return profileResponse.messages.ToString();
-		}
-
-		[HttpGet("ValidateCustomer")]
-		public ActionResult<string> ValidateCustomer(string customerId)
-		{
 			try
 			{
-				//1813212446
-				ANetApiResponse profileResponse = GetCustomerProfile.Run("78BZ5Xprry", "8s2F95Q7brhHd7Tn", customerId);
-				string message = profileResponse.messages.message[0].code + " " + profileResponse.messages.message[0].text;
 
-				Response.StatusCode = (int)HttpStatusCode.OK;
-				return Content(message, MediaTypeNames.Text.Plain);
+				ProxyMethod();
 
+				ANetApiResponse profileResponse = CreateAnAcceptPaymentTransaction.Run(apiLoginId, apiTransactionKey, token);
+
+
+				if (profileResponse != null)
+				{
+
+
+					if (profileResponse.messages.resultCode.ToString() == "Ok")
+					{
+						objAcceptResponse.Status = true;
+						objAcceptResponse.Value = ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse)profileResponse)
+							.transactionResponse.transId;
+
+					}
+					else
+					{
+						objAcceptResponse.Status = false;
+						objAcceptResponse.Message = ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse)profileResponse)
+								  .transactionResponse
+								  .errors[0].errorCode +
+								  ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse)profileResponse)
+								  .transactionResponse.errors[0].errorText;
+
+					}
+
+				}
+				else
+				{
+					objAcceptResponse.Status = false;
+					return NotFound();
+				}
 
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine(e);
-				return e.Message + " Stack Trace " + e.StackTrace;
+				objAcceptResponse.Status = false;
 
+				objAcceptResponse.Message = "Error occured while executing payment. " + e.Message;
 			}
+
+
+			return objAcceptResponse;
+		}
+
+		[HttpGet("AcceptHosted")]
+		[ProducesResponseType(200)]
+		[ProducesResponseType(404)]
+		public ActionResult<AcceptResponse> AcceptHosted(string apiLoginId, string apiTransactionKey, string iFrameCommunicatorUrl)
+		{
+			AcceptResponse objAcceptResponse = new AcceptResponse();
+
+			try
+			{
+
+				ProxyMethod();
+
+				ANetApiResponse response = GetAnAcceptPaymentPage.Run(apiLoginId, apiTransactionKey, iFrameCommunicatorUrl);
+
+
+				if (response != null)
+				{
+
+
+
+					if (response.messages.resultCode.ToString() == "Ok")
+					{
+						objAcceptResponse.Status = true;
+						objAcceptResponse.Value =
+							((AuthorizeNet.Api.Contracts.V1.getHostedPaymentPageResponse)response).token;
+
+					}
+					else
+					{
+						objAcceptResponse.Status = false;
+						objAcceptResponse.Message = "Failed to get hosted payment page Error: " +
+													response.messages.message[0].code + "  " +
+													response.messages.message[0].text;
+
+					}
+
+				}
+				else
+				{
+					objAcceptResponse.Status = false;
+					return NotFound();
+				}
+			}
+			catch (Exception e)
+			{
+				objAcceptResponse.Status = false;
+
+				objAcceptResponse.Message = "Error occured while executing payment. " + e.Message;
+			}
+
+
+			return objAcceptResponse;
 
 		}
 
-		[HttpGet("Test")]
-		public ActionResult<string> Test()
+
+		[HttpGet("AcceptCustomer")]
+		[ProducesResponseType(200)]
+		[ProducesResponseType(404)]
+		public ActionResult<AcceptResponse> AcceptCustomer(string apiLoginId, string apiTransactionKey, string customerId)
 		{
-			return "Hello World !!!";
+			AcceptResponse objAcceptResponse = new AcceptResponse();
+
+			try
+			{
+
+				ProxyMethod();
+
+				ANetApiResponse response = GetAcceptCustomerProfilePage.Run(apiLoginId, apiTransactionKey, customerId);
+
+
+				if (response != null)
+				{
+					if (response.messages.resultCode.ToString() == "Ok")
+					{
+						objAcceptResponse.Status = true;
+						objAcceptResponse.Value = "";
+						//((AuthorizeNet.Api.Contracts.V1.getHostedPaymentPageResponse)response).token;
+
+					}
+					else
+					{
+						objAcceptResponse.Status = false;
+						objAcceptResponse.Message = "Failed to get hosted payment page Error: " +
+													response.messages.message[0].code + "  " +
+													response.messages.message[0].text;
+
+					}
+
+				}
+				else
+				{
+					objAcceptResponse.Status = false;
+					return NotFound();
+				}
+			}
+			catch (Exception e)
+			{
+				objAcceptResponse.Status = false;
+
+				objAcceptResponse.Message = "Error occured while executing payment. " + e.Message;
+			}
+
+
+			return objAcceptResponse;
+		}
+
+
+		[HttpGet("ValidateCustomer")]
+		[ProducesResponseType(200)]
+		[ProducesResponseType(404)]
+		public ActionResult<AcceptResponse> ValidateCustomer(string apiLoginId, string apiTransactionKey, string customerId)
+		{
+			AcceptResponse objAcceptResponse = new AcceptResponse();
+
+			try
+			{
+
+				ProxyMethod();
+
+				ANetApiResponse response = GetCustomerProfile.Run(apiLoginId, apiTransactionKey, customerId);
+
+
+				if (response != null)
+				{
+
+					if (response.messages.resultCode.ToString() == "Ok")
+					{
+						objAcceptResponse.Status = true;
+						objAcceptResponse.Value = response.messages.message[0].code + " " + response.messages.message[0].text;
+
+					}
+					else
+					{
+						objAcceptResponse.Status = false;
+						objAcceptResponse.Message = "Error: " +
+													response.messages.message[0].code + "  " +
+													response.messages.message[0].text;
+
+					}
+
+				}
+				else
+				{
+					objAcceptResponse.Status = false;
+					return NotFound();
+				}
+			}
+			catch (Exception e)
+			{
+				objAcceptResponse.Status = false;
+
+				objAcceptResponse.Message = "Error . " + e.Message;
+			}
+
+
+			return objAcceptResponse;
+
 		}
 
 
@@ -134,6 +256,14 @@ namespace AcceptSuiteService.Controllers
 					AuthorizeNet.Environment.getIntProperty(Constants.HttpsProxyPort);
 			}
 		}
+	}
+
+	public class AcceptResponse
+	{
+		public string Value { get; set; }
+		public string Message { get; set; }
+		public bool Status = false;
+
 	}
 
 }
