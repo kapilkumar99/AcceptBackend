@@ -19,7 +19,19 @@ namespace AcceptSuiteService.Controllers
 	[ApiController]
 	public class AcceptSuiteController : ControllerBase
 	{
+		#region Create Transaction for Accept JS / Accept UI
 
+		/// <summary>
+		///  Method Implementation to create payment transaction for Accept JS and Accept UI
+		/// </summary>
+		/// <param name="apiLoginId"></param>
+		/// <param name="apiTransactionKey"></param>
+		/// <param name="token"></param>
+		/// <returns>
+		/// <param name="Status" value="True/False"></param>
+		/// <param name="Value" value="if status true returns transaction id"></param>
+		/// <param name="Message" value="if status false returns error message"></param>
+		/// </returns>
 		[HttpGet("AcceptJS")]
 		[ProducesResponseType(200)]
 		[ProducesResponseType(404)]
@@ -50,11 +62,16 @@ namespace AcceptSuiteService.Controllers
 					else
 					{
 						objAcceptResponse.Status = false;
-						objAcceptResponse.Message = ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse)profileResponse)
-								  .transactionResponse
-								  .errors[0].errorCode +
-								  ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse)profileResponse)
-								  .transactionResponse.errors[0].errorText;
+
+						if (profileResponse.messages.resultCode.ToString().ToLower() == "error")
+							objAcceptResponse.Message = profileResponse.messages.message[0].code + " " +
+							                            profileResponse.messages.message[0].text;
+						else
+							objAcceptResponse.Message = ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse)profileResponse)
+									  .transactionResponse
+									  .errors[0].errorCode +
+									  ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse)profileResponse)
+									  .transactionResponse.errors[0].errorText;
 
 					}
 
@@ -77,6 +94,21 @@ namespace AcceptSuiteService.Controllers
 			return objAcceptResponse;
 		}
 
+		#endregion
+
+		#region Accept Hosted
+
+		/// <summary>
+		/// Method implementation is to retrieve token.
+		/// </summary>
+		/// <param name="apiLoginId"></param>
+		/// <param name="apiTransactionKey"></param>
+		/// <param name="iFrameCommunicatorUrl"></param>
+		/// <returns>
+		/// <param name="Status" value="True/False"></param>
+		/// <param name="Value" value="if status true returns token"></param>
+		/// <param name="Message" value="if status false returns error message"></param>
+		/// </returns>
 		[HttpGet("AcceptHosted")]
 		[ProducesResponseType(200)]
 		[ProducesResponseType(404)]
@@ -86,7 +118,6 @@ namespace AcceptSuiteService.Controllers
 
 			try
 			{
-
 				ProxyMethod();
 
 				ANetApiResponse response = GetAnAcceptPaymentPage.Run(apiLoginId, apiTransactionKey, iFrameCommunicatorUrl);
@@ -132,7 +163,21 @@ namespace AcceptSuiteService.Controllers
 
 		}
 
+		#endregion
 
+		#region Accept Customer
+
+		/// <summary>
+		/// Method implementaion is to retrieve token for Accept Customer
+		/// </summary>
+		/// <param name="apiLoginId"></param>
+		/// <param name="apiTransactionKey"></param>
+		/// <param name="customerId"></param>
+		/// <returns>
+		/// <param name="Status" value="True/False"></param>
+		/// <param name="Value" value="if status true returns token"></param>
+		/// <param name="Message" value="if status false returns error message"></param>
+		/// </returns>
 		[HttpGet("AcceptCustomer")]
 		[ProducesResponseType(200)]
 		[ProducesResponseType(404)]
@@ -153,8 +198,7 @@ namespace AcceptSuiteService.Controllers
 					if (response.messages.resultCode.ToString() == "Ok")
 					{
 						objAcceptResponse.Status = true;
-						objAcceptResponse.Value = "";
-						//((AuthorizeNet.Api.Contracts.V1.getHostedPaymentPageResponse)response).token;
+						objAcceptResponse.Value = ((AuthorizeNet.Api.Contracts.V1.getHostedProfilePageResponse)response).token;					
 
 					}
 					else
@@ -184,7 +228,21 @@ namespace AcceptSuiteService.Controllers
 			return objAcceptResponse;
 		}
 
+		#endregion
 
+		#region Validate Customer
+
+		/// <summary>
+		/// Method implementation is to validate customer
+		/// </summary>
+		/// <param name="apiLoginId"></param>
+		/// <param name="apiTransactionKey"></param>
+		/// <param name="customerId"></param>
+		/// <returns>
+		/// <param name="Status" value="True/False"></param>
+		/// <param name="Value" value="if status true returns Success Message"></param>
+		/// <param name="Message" value="if status false returns error message"></param>
+		/// </returns>
 		[HttpGet("ValidateCustomer")]
 		[ProducesResponseType(200)]
 		[ProducesResponseType(404)]
@@ -237,32 +295,46 @@ namespace AcceptSuiteService.Controllers
 
 		}
 
+		#endregion
 
+		#region ProxyMethod
+
+		/// <summary>
+		/// Method Implementation is to set the values retrieved from System Environment Variables.
+		/// </summary>
 		private void ProxyMethod()
 		{
 			ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 			ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpUseProxy =
 				AuthorizeNet.Environment.getBooleanProperty(Constants.HttpsUseProxy);
 
+			//if HttpUseProxy is true than set the values for Proxy.
 			if (ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpUseProxy)
 			{
+				//proxy username
 				ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpsProxyUsername =
 					AuthorizeNet.Environment.GetProperty(Constants.HttpsProxyUsername);
+				//proxy password
 				ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpsProxyPassword =
 					AuthorizeNet.Environment.GetProperty(Constants.HttpsProxyPassword);
+				//proxy host
 				ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpProxyHost =
 					AuthorizeNet.Environment.GetProperty(Constants.HttpsProxyHost);
+				//proxy port
 				ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpProxyPort =
 					AuthorizeNet.Environment.getIntProperty(Constants.HttpsProxyPort);
 			}
 		}
+
+		#endregion
+
 	}
 
 	public class AcceptResponse
 	{
-		public string Value { get; set; }
-		public string Message { get; set; }
-		public bool Status = false;
+		public string Value { get; set; }//if status is true sets the response value
+		public string Message { get; set; } //if status is false sets the error message
+		public bool Status = false; //if status is true than the response is success
 
 	}
 
