@@ -11,7 +11,7 @@ namespace net.authorize.sample
 {
     public class GetAcceptCustomerProfilePage
     {
-        public static ANetApiResponse Run(string ApiLoginId, string ApiTransactionKey, string customerProfileId)
+        public static ANetApiResponse Run(string ApiLoginId, string ApiTransactionKey, string customerProfileId,string hostedPaymentIFrameCommunicatorUrl)
         {
             Console.WriteLine("Get Accept Customer Profile Page sample");
 
@@ -24,16 +24,13 @@ namespace net.authorize.sample
                 Item = ApiTransactionKey,
             };
 
-            settingType[] settings = new settingType[]{
-                                                new settingType()
-                                                // More settings can be added here as and when required
-                                    };
+			settingType[] settings = new settingType[1];
+		
             settings[0] = new settingType();
-            settings[0].settingName = settingNameEnum.hostedProfileReturnUrl.ToString();
-            settings[0].settingValue = "https://returnurl.com/return/";
+            settings[0].settingName = settingNameEnum.hostedProfileIFrameCommunicatorUrl.ToString();
+			settings[0].settingValue = hostedPaymentIFrameCommunicatorUrl;			
 
-
-            var request = new getHostedProfilePageRequest();
+			var request = new getHostedProfilePageRequest();
             request.customerProfileId = customerProfileId;
             request.hostedProfileSettings = settings;
 

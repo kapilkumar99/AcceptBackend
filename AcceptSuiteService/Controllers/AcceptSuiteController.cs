@@ -112,7 +112,7 @@ namespace AcceptSuiteService.Controllers
 		[HttpGet("AcceptHosted")]
 		[ProducesResponseType(200)]
 		[ProducesResponseType(404)]
-		public ActionResult<AcceptResponse> AcceptHosted(string apiLoginId, string apiTransactionKey, string iFrameCommunicatorUrl)
+		public ActionResult<AcceptResponse> AcceptHosted(string apiLoginId, string apiTransactionKey, string iFrameCommunicatorUrl,string customerId= null)
 		{
 			AcceptResponse objAcceptResponse = new AcceptResponse();
 
@@ -120,7 +120,7 @@ namespace AcceptSuiteService.Controllers
 			{
 				ProxyMethod();
 
-				ANetApiResponse response = GetAnAcceptPaymentPage.Run(apiLoginId, apiTransactionKey, iFrameCommunicatorUrl);
+				ANetApiResponse response = GetAnAcceptPaymentPage.Run(apiLoginId, apiTransactionKey, iFrameCommunicatorUrl, customerId);
 
 
 				if (response != null)
@@ -181,7 +181,7 @@ namespace AcceptSuiteService.Controllers
 		[HttpGet("AcceptCustomer")]
 		[ProducesResponseType(200)]
 		[ProducesResponseType(404)]
-		public ActionResult<AcceptResponse> AcceptCustomer(string apiLoginId, string apiTransactionKey, string customerId)
+		public ActionResult<AcceptResponse> AcceptCustomer(string apiLoginId, string apiTransactionKey, string customerId,string iFrameCommunicatorUrl)
 		{
 			AcceptResponse objAcceptResponse = new AcceptResponse();
 
@@ -190,7 +190,7 @@ namespace AcceptSuiteService.Controllers
 
 				ProxyMethod();
 
-				ANetApiResponse response = GetAcceptCustomerProfilePage.Run(apiLoginId, apiTransactionKey, customerId);
+				ANetApiResponse response = GetAcceptCustomerProfilePage.Run(apiLoginId, apiTransactionKey, customerId, iFrameCommunicatorUrl);
 
 
 				if (response != null)

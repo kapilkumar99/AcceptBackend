@@ -10,7 +10,7 @@ namespace net.authorize.sample
 {
     public class GetAnAcceptPaymentPage
     {
-        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey,string hostedPaymentIFrameCommunicatorUrl,string customerProfileId = null)
         {
             Console.WriteLine("GetAnAcceptPaymentPage Sample");
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
@@ -21,7 +21,7 @@ namespace net.authorize.sample
                 Item = ApiTransactionKey,
             };
 
-            settingType[] settings = new settingType[2];
+            settingType[] settings = new settingType[4];
 
             settings[0] = new settingType();
             settings[0].settingName = settingNameEnum.hostedPaymentButtonOptions.ToString();
@@ -31,11 +31,27 @@ namespace net.authorize.sample
             settings[1].settingName = settingNameEnum.hostedPaymentOrderOptions.ToString();
             settings[1].settingValue = "{\"show\": false}";
 
-            var transactionRequest = new transactionRequestType
+
+	        settings[2] = new settingType();
+	        settings[2].settingName = settingNameEnum.hostedPaymentIFrameCommunicatorUrl.ToString();
+	        settings[2].settingValue = "{\"url\": \""+ hostedPaymentIFrameCommunicatorUrl +"\"}";
+
+	        settings[3] = new settingType();
+	        settings[3].settingName = settingNameEnum.hostedPaymentBillingAddressOptions.ToString();
+	        settings[3].settingValue = "{\"show\": false}";
+
+			var custprofile = new customerProfilePaymentType
+			{
+				customerProfileId = customerProfileId
+			};
+
+			var transactionRequest = new transactionRequestType
             {
                 transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // authorize capture only
-                amount = 22
-            };
+                amount = 22,
+				profile = custprofile
+
+			};
 
             var request = new getHostedPaymentPageRequest();
             request.transactionRequest = transactionRequest;
