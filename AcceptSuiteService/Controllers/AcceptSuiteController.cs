@@ -52,22 +52,22 @@ namespace AcceptSuiteService.Controllers
 				{
 
 
-					if (profileResponse.messages.resultCode.ToString() == "Ok")
+					if (profileResponse.messages.resultCode.ToString().ToLower() == "ok")
 					{
-						objAcceptResponse.Status = true;
-						objAcceptResponse.Value = ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse)profileResponse)
+						objAcceptResponse.status = true;
+						objAcceptResponse.successValue = ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse)profileResponse)
 							.transactionResponse.transId;
 
 					}
 					else
 					{
-						objAcceptResponse.Status = false;
+						objAcceptResponse.status = false;
 
 						if (profileResponse.messages.resultCode.ToString().ToLower() == "error")
-							objAcceptResponse.Message = profileResponse.messages.message[0].code + " " +
+							objAcceptResponse.errorMessage = profileResponse.messages.message[0].code + " " +
 							                            profileResponse.messages.message[0].text;
 						else
-							objAcceptResponse.Message = ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse)profileResponse)
+							objAcceptResponse.errorMessage = ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse)profileResponse)
 									  .transactionResponse
 									  .errors[0].errorCode +
 									  ((AuthorizeNet.Api.Contracts.V1.createTransactionResponse)profileResponse)
@@ -78,16 +78,16 @@ namespace AcceptSuiteService.Controllers
 				}
 				else
 				{
-					objAcceptResponse.Status = false;
+					objAcceptResponse.status = false;
 					return NotFound();
 				}
 
 			}
 			catch (Exception e)
 			{
-				objAcceptResponse.Status = false;
+				objAcceptResponse.status = false;
 
-				objAcceptResponse.Message = "Error occured while executing payment. " + e.Message;
+				objAcceptResponse.errorMessage = "Error occured while executing payment. " + e.Message;
 			}
 
 
@@ -128,17 +128,17 @@ namespace AcceptSuiteService.Controllers
 
 
 
-					if (response.messages.resultCode.ToString() == "Ok")
+					if (response.messages.resultCode.ToString().ToLower() == "ok")
 					{
-						objAcceptResponse.Status = true;
-						objAcceptResponse.Value =
+						objAcceptResponse.status = true;
+						objAcceptResponse.successValue =
 							((AuthorizeNet.Api.Contracts.V1.getHostedPaymentPageResponse)response).token;
 
 					}
 					else
 					{
-						objAcceptResponse.Status = false;
-						objAcceptResponse.Message = "Failed to get hosted payment page Error: " +
+						objAcceptResponse.status = false;
+						objAcceptResponse.errorMessage = "Failed to get hosted payment page Error: " +
 													response.messages.message[0].code + "  " +
 													response.messages.message[0].text;
 
@@ -147,15 +147,15 @@ namespace AcceptSuiteService.Controllers
 				}
 				else
 				{
-					objAcceptResponse.Status = false;
+					objAcceptResponse.status = false;
 					return NotFound();
 				}
 			}
 			catch (Exception e)
 			{
-				objAcceptResponse.Status = false;
+				objAcceptResponse.status = false;
 
-				objAcceptResponse.Message = "Error occured while executing payment. " + e.Message;
+				objAcceptResponse.errorMessage = "Error occured while executing payment. " + e.Message;
 			}
 
 
@@ -195,16 +195,16 @@ namespace AcceptSuiteService.Controllers
 
 				if (response != null)
 				{
-					if (response.messages.resultCode.ToString() == "Ok")
+					if (response.messages.resultCode.ToString().ToLower() == "ok")
 					{
-						objAcceptResponse.Status = true;
-						objAcceptResponse.Value = ((AuthorizeNet.Api.Contracts.V1.getHostedProfilePageResponse)response).token;					
+						objAcceptResponse.status = true;
+						objAcceptResponse.successValue = ((AuthorizeNet.Api.Contracts.V1.getHostedProfilePageResponse)response).token;					
 
 					}
 					else
 					{
-						objAcceptResponse.Status = false;
-						objAcceptResponse.Message = "Failed to get hosted payment page Error: " +
+						objAcceptResponse.status = false;
+						objAcceptResponse.errorMessage = "Failed to get hosted payment page Error: " +
 													response.messages.message[0].code + "  " +
 													response.messages.message[0].text;
 
@@ -213,15 +213,15 @@ namespace AcceptSuiteService.Controllers
 				}
 				else
 				{
-					objAcceptResponse.Status = false;
+					objAcceptResponse.status = false;
 					return NotFound();
 				}
 			}
 			catch (Exception e)
 			{
-				objAcceptResponse.Status = false;
+				objAcceptResponse.status = false;
 
-				objAcceptResponse.Message = "Error occured while executing payment. " + e.Message;
+				objAcceptResponse.errorMessage = "Error occured while executing payment. " + e.Message;
 			}
 
 
@@ -261,16 +261,16 @@ namespace AcceptSuiteService.Controllers
 				if (response != null)
 				{
 
-					if (response.messages.resultCode.ToString() == "Ok")
+					if (response.messages.resultCode.ToString().ToLower() == "ok")
 					{
-						objAcceptResponse.Status = true;
-						objAcceptResponse.Value = response.messages.message[0].code + " " + response.messages.message[0].text;
+						objAcceptResponse.status = true;
+						objAcceptResponse.successValue = response.messages.message[0].code + " " + response.messages.message[0].text;
 
 					}
 					else
 					{
-						objAcceptResponse.Status = false;
-						objAcceptResponse.Message = "Error: " +
+						objAcceptResponse.status = false;
+						objAcceptResponse.errorMessage = "Error: " +
 													response.messages.message[0].code + "  " +
 													response.messages.message[0].text;
 
@@ -279,15 +279,15 @@ namespace AcceptSuiteService.Controllers
 				}
 				else
 				{
-					objAcceptResponse.Status = false;
+					objAcceptResponse.status = false;
 					return NotFound();
 				}
 			}
 			catch (Exception e)
 			{
-				objAcceptResponse.Status = false;
+				objAcceptResponse.status = false;
 
-				objAcceptResponse.Message = "Error . " + e.Message;
+				objAcceptResponse.errorMessage = "Error . " + e.Message;
 			}
 
 
@@ -332,9 +332,9 @@ namespace AcceptSuiteService.Controllers
 
 	public class AcceptResponse
 	{
-		public string Value { get; set; }//if status is true sets the response value
-		public string Message { get; set; } //if status is false sets the error message
-		public bool Status = false; //if status is true than the response is success
+		public string successValue { get; set; }//if status is true sets the response value
+		public string errorMessage { get; set; } //if status is false sets the error message
+		public bool status = false; //if status is true than the response is success
 
 	}
 
